@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-connected-app
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: my-connected-app
+  template:
+    metadata:
+      labels:
+        app: my-connected-app
+    spec:
+      containers:
+        - name: my-connected-app
+          image: my-connected-app
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-connected-app
+  namespace: default
+spec:
+  selector:
+    app: my-connected-app
+  type: NodePort
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 30000
