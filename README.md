@@ -8,7 +8,7 @@ within a Kubernetes cluster along with the
 [my-connected-api](https://github.com/MartinHodges/my-connected-apis)
 Spring Boot application.
 
-You can find a more detailed explanation of the project in my associated [Medium article](https://medium.com/@martin.hodges).
+You can find a more detailed explanation of the project in my associated [Medium article](https://medium.com/@martin.hodges/how-to-access-your-apis-from-next-js-within-kubernetes-86677770f941).
 
 You can run it locally from within the project folder with:
 ```
